@@ -24,4 +24,13 @@ class DefaultController extends Controller
     {
         return $this->render('@App/default/feedback.html.twig');
     }
+
+    /**
+     * @Route("/fish", name="fish")
+     */
+    public function fishAction()
+    {
+        return $this->render('@App/default/fish.html.twig');
+    }
+
 }
