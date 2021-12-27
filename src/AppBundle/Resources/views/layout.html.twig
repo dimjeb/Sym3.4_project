@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('bundles/app/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{{ asset('bundles/app/css/bootstrap.min.css') }}" rel="stylesheet">
 
 
     <style>
@@ -43,22 +43,22 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="{{ path('feedback') }}">Feedback</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
+{#            <li class="nav-item">#}
+{#                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}
+{#            </li>#}
+{#            <li class="nav-item dropdown">#}
+{#                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>#}
+{#                <div class="dropdown-menu" aria-labelledby="dropdown01">#}
+{#                    <a class="dropdown-item" href="#">Action</a>#}
+{#                    <a class="dropdown-item" href="#">Another action</a>#}
+{#                    <a class="dropdown-item" href="#">Something else here</a>#}
+{#                </div>#}
+{#            </li>#}
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -70,25 +70,7 @@
 <main role="main" class="container">
     {% block body %}{% endblock %}
 </main><!-- /.container -->
-<script src="{{ asset('bundles/app/js/jquery-1.9.1.min.js     ') }}></script>
+<script src="{{ asset('bundles/app/js/jquery-1.9.1.min.js') }}></script>
 <script src="{{ asset('bundles/app/js/popper.min.js') }}></script>
 <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}></script>
 </html>
-
-
-
-
-
-{#<!DOCTYPE html>#}
-{#<html>#}
-{#    <head>#}
-{#        <meta charset="UTF-8" />#}
-{#        <title>{% block title %}Welcome!{% endblock %}</title>#}
-{#        {% block stylesheets %}{% endblock %}#}
-{#        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
-{#    </head>#}
-{#    <body>#}
-{#        {% block body %}{% endblock %}#}
-{#        {% block javascripts %}{% endblock %}#}
-{#    </body>#}
-{#</html>#}
