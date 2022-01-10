@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,10 +18,7 @@ class ProductController extends Controller
      */
     public function indexAction()
     {
-        $products = [];
-        for ($i = 1; $i <= 10; $i++) {
-            $products[] = rand(1, 100);
-    }
+        $products = $this -> getDoctrine() -> getRepository('AppBundle:Product') -> findActive();
         return $this->render('@App/product/index.html.twig', ['products' => $products]);
     }
 
@@ -29,8 +27,8 @@ class ProductController extends Controller
      * @param $id
      * @return Response
      */
-    public function showAction($id): Response
+    public function showAction(Product $product)
     {
-        return $this -> render('@App/product/show.html.twig', ['id' => $id]);
+        return $this -> render('@App/product/show.html.twig', ['product' => $product]);
     }
 }
